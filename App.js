@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
+import Home from './screens/Home';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Review App</Text>
-      
-    </View>
+    <Home/>
   );
 }
 
@@ -15,5 +14,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
