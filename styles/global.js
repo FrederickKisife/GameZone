@@ -6,6 +6,7 @@ export const globalStyles = StyleSheet.create({
         padding:20,
     }, 
     titleText:{
+        fontSize: 18,
         fontWeight:'bold',
         color:"#333",
     },

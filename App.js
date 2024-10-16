@@ -1,5 +1,5 @@
 import Home from './screens/Home';
-import Navigator from './routes/HomeStack'
+import Navigator from './routes/Drawer'
 
 
 export default function App() {
