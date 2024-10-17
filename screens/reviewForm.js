@@ -8,11 +8,8 @@ export default function reviewForm({addReview}) {
     <View style={globalStyles.container}>
         <Formik
             initialValues={{title: "", body: "", rating: ""}}
-            onSubmit={(values, actions)=>{
-                // The actions as one of the parameters is being called to reset the form below
-                actions.resetForm();
+            onSubmit={(values)=>{
                 addReview(values);
-                
             }}
         >
             {(props)=>(
