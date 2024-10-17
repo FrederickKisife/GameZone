@@ -4,6 +4,8 @@ import { globalStyles } from '../styles/global';
 import {useState} from 'react';
 import Card from '../shared/Card';
 import {MaterialIcons} from "@expo/vector-icons";
+import ReviewForm from './reviewForm';
+
 
 
 
@@ -15,18 +17,26 @@ export default function Home({navigation}) {
         {title:"GTA", rating: 3, body:"Action and Adventure Quest", key:'3'},
     ])
 
+    const addReview = (review)=>{
+      review.key = Math.random().toString();
+      setReviews((currentReviews)=>{
+        return[review, ...currentReviews]
+      })
+      // setModalOpen(false);
+    }
+
   return (
     <ImageBackground source={require("../assets/game_bg.png")} style={globalStyles.container}>
 
       <Modal visible={modalOpen} animationType="slide">
-        <View>
+        <View style={styles.modalContent}>
         <MaterialIcons
           name="close"
           size={24}
           style={styles.modalToggleClose}
           onPress={()=>setModalOpen(false)}
       />
-          <Text>Hello from modal :)</Text>
+          <ReviewForm addReview={addReview}/>
         </View>
       </Modal>
 
