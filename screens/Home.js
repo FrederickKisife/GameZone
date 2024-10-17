@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, ImageBackground, Modal} from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, ImageBackground, Modal,
+Keyboard, TouchableWithoutFeedback} from 'react-native';
 import { globalStyles } from '../styles/global';
 import {useState} from 'react';
 import Card from '../shared/Card';
@@ -29,6 +30,7 @@ export default function Home({navigation}) {
     <ImageBackground source={require("../assets/game_bg.png")} style={globalStyles.container}>
 
       <Modal visible={modalOpen} animationType="slide">
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss()}>
         <View style={styles.modalContent}>
         <MaterialIcons
           name="close"
@@ -38,6 +40,8 @@ export default function Home({navigation}) {
       />
           <ReviewForm addReview={addReview}/>
         </View>
+        </TouchableWithoutFeedback>
+        
       </Modal>
 
       <MaterialIcons
