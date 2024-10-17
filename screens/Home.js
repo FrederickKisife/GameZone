@@ -45,6 +45,7 @@ export default function Home({navigation}) {
       </Modal>
 
       <MaterialIcons
+        
         name="add"
         size={24}
         onPress={()=>setModalOpen(true)}
